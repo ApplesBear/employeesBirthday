@@ -6,11 +6,11 @@ function Scroll() {
     let element = document.querySelector('#selected-letter > div');
 
     if (!element) {
-        leftSide.scrollLeft += event.deltaY;
+      leftSide.scrollLeft += event.deltaY;
     }
 
     if (element) {
-        element.scrollTop += event.deltaY;
+      element.scrollTop += event.deltaY;
     }
   });
 }

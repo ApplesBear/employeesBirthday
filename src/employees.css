@@ -11,7 +11,7 @@
   height: 0;
 }
 
-.employees > div  {
+.employees > div {
   display: flex;
   flex-direction: column;
   background-color: hsl(0, 0%, 95%);
@@ -24,21 +24,19 @@
   border: 2px solid transparent;
 }
 
-.employees > div:hover  {
+.employees > div:hover {
   position: relative;
   z-index: 1000;
   border: 2px solid hsl(23, 100%, 75%);
 }
 
-.employees-by-letter  {
+.employees-by-letter {
   display: flex;
   flex-direction: column;
   height: 100%;
   flex-grow: 1;
   overflow-y: scroll;
 }
-
-
 
 .employees-by-letter > div {
   margin-bottom: 20px;
