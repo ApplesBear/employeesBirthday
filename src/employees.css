@@ -1,0 +1,104 @@
+.employees {
+  display: flex;
+  flex-grow: 1;
+  width: 100%;
+  overflow-x: scroll;
+  margin-top: 20px;
+}
+
+*::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}
+
+.employees > div  {
+  display: flex;
+  flex-direction: column;
+  background-color: hsl(0, 0%, 95%);
+  width: 200px;
+  height: 100%;
+  margin-right: 20px;
+  flex-shrink: 0;
+  padding: 10px;
+  padding-bottom: 0;
+  border: 2px solid transparent;
+}
+
+.employees > div:hover  {
+  position: relative;
+  z-index: 1000;
+  border: 2px solid hsl(23, 100%, 75%);
+}
+
+.employees-by-letter  {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  flex-grow: 1;
+  overflow-y: scroll;
+}
+
+
+
+.employees-by-letter > div {
+  margin-bottom: 20px;
+}
+
+.employees-by-letter > div:last-child {
+  margin-bottom: 0px;
+}
+
+h3 {
+  font-size: 26px;
+  margin-bottom: 20px;
+}
+
+h4 {
+  font-size: 20px;
+}
+
+.active {
+  color: hsl(23, 100%, 50%);
+}
+
+form {
+  display: flex;
+  justify-content: space-between;
+}
+
+label {
+  text-transform: capitalize;
+  font-size: 16px;
+  position: relative;
+  padding-left: 20px;
+}
+
+label:after {
+  content: '';
+  width: 10px;
+  height: 10px;
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-55%);
+  border-radius: 10px;
+  border: 2px solid hsl(23, 100%, 75%);
+  background-color: hsl(0, 0%, 95%);
+}
+
+label:hover:after {
+  border: 2px solid hsl(23, 100%, 50%);
+}
+
+input {
+  display: none;
+}
+
+.selected:after {
+  border: 2px solid hsl(23, 100%, 50%);
+  background: radial-gradient(hsl(23, 100%, 50%) 30%, hsl(0, 0%, 95%) 50%);
+}
+
+#selected-letter {
+  border: 2px solid hsl(23, 100%, 50%);
+}

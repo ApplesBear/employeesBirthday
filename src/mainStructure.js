@@ -1,9 +1,9 @@
 import Employees from './employees';
 import Birthday from './birthday';
-import './App.css';
+import './mainStructure.css';
 import React from 'react';
 
-class App extends React.Component {
+class MainStructure extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -45,10 +45,9 @@ class App extends React.Component {
             <Birthday employees={this.state.activeEmployees}/>
           </section>
         </div>
-        <footer>by Tetiana Larina</footer>
       </div>
     )
   }
 }
 
-export default App;
+export default MainStructure;
