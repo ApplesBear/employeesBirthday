@@ -214,13 +214,13 @@ input {
   margin: 0px 0 10px;
 }
 
-.right-side div {
-  margin: 20px;
+.right-side > div {
+  margin: 20px 0;
+  width: 100%;
 }
 
 .birthday-months {
   flex-grow: 1;
-  width: 100%;
   overflow-y: scroll;
   margin-top: 20px;
 }
@@ -336,6 +336,10 @@ input {
     overflow: hidden;
     padding: 0 0 1em;
     border: 0px solid white;
+  }
+
+  .right-side > div {
+    padding: 10px;
   }
 
   .right-side:hover,
