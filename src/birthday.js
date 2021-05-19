@@ -1,6 +1,5 @@
 import React from 'react';
 import Month from './month.js';
-import './birthday.css';
 
 class Birthday extends React.Component {
   constructor(props) {
@@ -32,7 +31,12 @@ class Birthday extends React.Component {
 
   render() {
     if (this.props.employees.length < 1)
-      return <h2>Employees List is empty</h2>;
+      return (
+        <div>
+          <h2>Employees List is empty</h2>
+          <h5>Сhoose a name to show birthday date</h5>
+        </div>
+      );
 
     return (
       <div className="birthday-months">

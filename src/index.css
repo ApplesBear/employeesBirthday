@@ -8,6 +8,377 @@
   cursor: default;
 }
 
+html {
+  --vh: 100vh;
+}
+
+*::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}
+
 body {
   background-color: hsl(225, 13%, 13%);
+}
+
+.main-container,
+section,
+.employees,
+.employees > div,
+.employees-by-letter,
+form,
+.birthday-months {
+  display: flex;
+}
+
+section,
+.employees > div,
+.employees-by-letter,
+.birthday-months {
+  flex-direction: column;
+}
+
+.main-container {
+  justify-content: center;
+  padding: 0 30px;
+  height: calc(100vh - 80px);
+}
+
+h1 {
+  font-size: 40px;
+  border-bottom: 5px solid hsl(23, 100%, 50%);
+}
+
+h3 {
+  font-size: 26px;
+  margin-bottom: 20px;
+}
+
+h4 {
+  font-size: 20px;
+}
+
+h5 {
+  font-size: 18px;
+}
+
+header {
+  color: white;
+  height: 50px;
+  padding: 10px 30px;
+}
+
+header > h2 {
+  color: white;
+}
+
+header span {
+  position: relative;
+  font-size: 25px;
+}
+
+header span:after {
+  background-color: hsl(23, 100%, 50%);
+  height: 5px;
+  width: 5px;
+  border-radius: 3px;
+  content: '';
+  position: absolute;
+  z-index: 100;
+  display: block;
+  top: 4px;
+  left: 65px;
+}
+
+footer {
+  color: white;
+  padding: 5px 30px 0px;
+  height: 30px;
+}
+
+section {
+  justify-content: flex-start;
+  padding: 20px;
+}
+
+section > div {
+  align-self: center;
+}
+
+/* ------------------------------------------------------- LEFT SIDE */
+
+.left-side {
+  flex-grow: 1;
+  min-width: 60px;
+  background-color: hsl(0, 0%, 100%);
+}
+
+.left-side > h1 {
+  background-image: url(./fon.png);
+  background-repeat: no-repeat;
+  background-position-x: right;
+  background-position-y: bottom;
+}
+
+.employees {
+  flex-grow: 1;
+  width: 100%;
+  overflow-x: scroll;
+  margin-top: 20px;
+}
+
+.employees > div {
+  background-color: hsl(0, 0%, 95%);
+  width: 200px;
+  height: 100%;
+  margin-right: 20px;
+  flex-shrink: 0;
+  padding: 10px;
+  padding-bottom: 0;
+  border: 2px solid transparent;
+}
+
+.employees > div:hover {
+  position: relative;
+  z-index: 1000;
+  border: 2px solid hsl(23, 100%, 75%);
+}
+
+.employees-by-letter {
+  height: 100%;
+  flex-grow: 1;
+  overflow-y: scroll;
+}
+
+.employees-by-letter > div {
+  margin-bottom: 20px;
+}
+
+.employees-by-letter > div:last-child {
+  margin-bottom: 0px;
+}
+
+.active {
+  color: hsl(23, 100%, 50%);
+}
+
+form {
+  justify-content: space-between;
+}
+
+label {
+  text-transform: capitalize;
+  font-size: 16px;
+  position: relative;
+  padding-left: 20px;
+}
+
+label:after {
+  content: '';
+  width: 10px;
+  height: 10px;
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-55%);
+  border-radius: 10px;
+  border: 2px solid hsl(23, 100%, 75%);
+  background-color: hsl(0, 0%, 95%);
+}
+
+label:hover:after {
+  border: 2px solid hsl(23, 100%, 50%);
+}
+
+input {
+  display: none;
+}
+
+.selected:after {
+  border: 2px solid hsl(23, 100%, 50%);
+  background: radial-gradient(hsl(23, 100%, 50%) 30%, hsl(0, 0%, 95%) 50%);
+}
+
+#selected-letter {
+  border: 2px solid hsl(23, 100%, 50%);
+}
+
+/* ------------------------------------------------------- RIGHT SIDE */
+.right-side {
+  width: 380px;
+  background-color: hsl(0, 0%, 95%);
+  flex-shrink: 0;
+}
+
+.right-side h2 {
+  margin: 0px 0 10px;
+}
+
+.right-side div {
+  margin: 20px;
+}
+
+.birthday-months {
+  flex-grow: 1;
+  width: 100%;
+  overflow-y: scroll;
+  margin-top: 20px;
+}
+
+.birthday-months > div {
+  background-color: hsl(0, 0%, 100%);
+  width: 100%;
+  margin-bottom: 20px;
+  flex-shrink: 0;
+  padding: 10px;
+}
+
+.birthday-months > div:last-child {
+  margin-bottom: 0px;
+}
+
+.birthday-months > div > h2 {
+  margin-bottom: 5px;
+}
+
+.birthday-months > div > div > div {
+  margin-left: 15px;
+  position: relative;
+}
+
+.birthday-months > div > div > div > span {
+  font-weight: bold;
+}
+
+.birthday-months > div > div > div:before {
+  content: '';
+  display: block;
+  height: 7px;
+  width: 7px;
+  border-radius: 7px;
+  background-color: hsl(23, 100%, 50%);
+  position: absolute;
+  left: -15px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+/* ------------------------------------------------------- MEDIA QUERIES */
+@media only screen and (max-width: 1200px) {
+  .main-container {
+    padding: 0;
+    position: relative;
+  }
+}
+
+@media only screen and (min-width: 621px) and (max-width: 950px) {
+  .right-side {
+    position: fixed;
+    right: 0px;
+    height: 77px;
+    width: 400px;
+    overflow: hidden;
+    border-left: 20px solid white;
+    padding: 0 0 20px;
+  }
+
+  .right-side:hover {
+    height: calc(100vh - 80px);
+  }
+
+  .right-side h1 {
+    padding: 20px 20px 0px;
+  }
+
+  .right-side > div {
+    padding: 0 20px;
+  }
+
+  .left-side h1 {
+    width: calc(100% - 380px);
+  }
+}
+
+@media only screen and (max-width: 620px) {
+  header,
+  footer {
+    position: absolute;
+    width: 100vw;
+    z-index: -100;
+    bottom: 0;
+  }
+
+  h1 {
+    font-size: 2em;
+  }
+
+  header {
+    bottom: 50%;
+    text-align: center;
+  }
+
+  .main-container {
+    position: absolute;
+    top: 0;
+    flex-direction: column;
+    justify-content: flex-start;
+    height: var(--vh);
+    width: 100vw;
+  }
+
+  .right-side,
+  .left-side {
+    position: initial;
+    height: 2.85em;
+    flex-grow: 0;
+    flex-shrink: 0;
+    width: 100%;
+    overflow: hidden;
+    padding: 0 0 1em;
+    border: 0px solid white;
+  }
+
+  .right-side:hover,
+  .left-side:hover {
+    flex-grow: 1;
+  }
+
+  .left-side h1,
+  .right-side h1 {
+    width: 100%;
+    margin: 0 auto;
+    padding: 0;
+    text-align: center;
+  }
+
+  h2,
+  h4 {
+    font-size: 1.3em;
+  }
+
+  h3 {
+    font-size: 1.4em;
+  }
+
+  h5 {
+    font-size: 1.1em;
+  }
+
+  .right-side h1 {
+    border-bottom: 0px solid hsl(23, 100%, 50%);
+    border-top: 5px solid hsl(23, 100%, 50%);
+  }
+
+  .right-side:hover h1 {
+    border-bottom: 5px solid hsl(23, 100%, 50%);
+    border-top: 0px solid hsl(23, 100%, 50%);
+  }
+
+  .employees > div {
+    margin-right: 1em;
+  }
+
+  .employees {
+    margin-top: 1em;
+  }
 }

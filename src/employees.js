@@ -1,6 +1,5 @@
 import React from 'react';
-import Letter from './alphabet.js';
-import './employees.css';
+import Letter from './letter.js';
 
 class Employees extends React.Component {
   constructor(props) {

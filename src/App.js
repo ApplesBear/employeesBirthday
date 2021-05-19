@@ -1,7 +1,6 @@
-import Employees from './employees';
-import Birthday from './birthday';
-import './App.css';
 import React from 'react';
+import Birthday from './birthday';
+import Employees from './employees';
 
 class App extends React.Component {
   constructor(props) {
@@ -18,7 +17,7 @@ class App extends React.Component {
       'https://yalantis-react-school-api.yalantis.com/api/task0/users'
     )
       .then((response) => response.json())
-      .catch((err) => alert(err));
+      .catch((err) => console.log(err));
     this.setState({ employees: names });
     this.renderBirthday();
   }
@@ -37,7 +36,9 @@ class App extends React.Component {
     return (
       <div>
         <header>
-          <h2>Test task for Yalantis React.js School</h2>
+          <h2>
+            Test task for <span>Yalantis</span> React.js School
+          </h2>
         </header>
         <div className="main-container">
           <section className="left-side">

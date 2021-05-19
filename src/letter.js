@@ -6,11 +6,16 @@ class Letter extends React.Component {
     super(props);
     this.state = {
       focus: false,
+      mouseover: false,
     };
   }
 
   activate(x) {
-    this.setState({ focus: x }, this.setRef);
+    this.setState({ focus: x });
+  }
+
+  mouseover(x) {
+    this.setState({ mouseover: x });
   }
 
   render() {
@@ -20,18 +25,21 @@ class Letter extends React.Component {
 
     return (
       <div
-        onClick={(event) => {
-          this.activate(true);
+        onMouseEnter={(event) => {
+          this.mouseover(true);
+          setTimeout(() => {
+            if (this.state.mouseover) this.activate(true);
+          }, 350);
           event.currentTarget.scrollIntoView();
         }}
-        onMouseLeave={() => this.activate(false)}
+        onMouseLeave={() => {
+          this.mouseover(false);
+          this.activate(false);
+        }}
         id={this.state.focus ? 'selected-letter' : ''}
       >
         <h3>{this.props.letter}</h3>
-        <div
-          className={this.props.letter + ' employees-by-letter'}
-          ref={this.target}
-        >
+        <div className={'employees-by-letter'}>
           {names.length > 0 ? (
             names.map((name) => (
               <Name
